@@ -18,7 +18,8 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
 
 - Telécharger et installer Mosquitto
 - Ajouter le dossier d'installation de Mosquitto aux variables d'environnement `C:\Program Files\mosquitto`
-- Lancer Mosquitto en ligne de commande
+- Ouvrir un terminal et lancer Mosquitto en ligne de commande :
+
   ```bash
   mosquitto
   ```
@@ -46,6 +47,12 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
 
    ```bash
    npm i
+   ```
+
+   ou
+
+   ```bash
+   npm install
    ```
 
 3. Configurez la connexion MQTT dans `config/config.json` :
@@ -81,12 +88,6 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
 
    ```bash
    npm i
-   ```
-
-   ou
-
-   ```bash
-   npm install
    ```
 
 3. Configurer les variables d'environnement :
