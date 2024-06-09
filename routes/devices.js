@@ -84,7 +84,7 @@ router.post("/device/:name/publish", (req, res) => {
 router.post("/device/:name/set", (req, res) => {
   const deviceName = req.params.name;
   const newState = req.body.state;
-  console.log("MOP", newState);
+  console.log("MOP", newState, deviceName);
   mqttClient.publishMessage(`${config.mqtt.topicPrefix}/${deviceName}/set`, {
     state: newState,
   });
