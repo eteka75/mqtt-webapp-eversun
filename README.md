@@ -39,9 +39,15 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
 
 ### Backend NODE JS
 
-1. Naviguez vers le dossier `mqtt-nodejs-server` :
+0. Cloner le dépôt
+
    ```bash
-   cd mqtt-nodejs-server
+   git clone git@github.com:eteka75/mqtt-webapp-eversun.git
+   ```
+
+1. Naviguez vers le dossier `mqtt-webapp-eversun` :
+   ```bash
+   cd mqtt-webapp-eversun
    ```
 2. Installez les dépendances :
 
@@ -56,6 +62,7 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
    ```
 
 3. Configurez la connexion MQTT dans `config/config.json` :
+   Modifiez ces informations en fonction de la configuration souhaitée :
 
    ```bash
        {
@@ -78,7 +85,15 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
 
 ### Frontend
 
+- Ouvrez un nouveau terminal
+
 1. Se déplacer vers de dossier Frontend `FRONTEND`
+
+   ```bash
+   cd mqtt-webapp-eversun/FRONTEND
+   ```
+
+   ou
 
    ```bash
    cd FRONTEND
@@ -91,6 +106,19 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
    ```
 
 3. Configurer les variables d'environnement :
+   Créer un fichier `.env` manuellement ou en tapant la commande:
+
+   ```bash
+   touch .env
+   ```
+
+   ou
+
+   ```bash
+   echo >  .env
+   ```
+
+   Ajouter ces paramètres :
 
    ```bash
     PORT = 3000
