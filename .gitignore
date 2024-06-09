@@ -1,12 +1,12 @@
 
 # front
-mqtt-react-client/node_modules
-mqtt-react-client/.pnp
-mqtt-react-client/.pnp.js
-mqtt-react-client/coverage
-mqtt-react-client/build
-mqtt-react-client/.DS_Store
-mqtt-react-client/.env
+FRONTEND/node_modules/
+FRONTEND/.pnp
+FRONTEND/.pnp.js
+FRONTEND/coverage
+FRONTEND/build
+FRONTEND/.DS_Store
+FRONTEND/.env
 
 
 
@@ -14,10 +14,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 # dependencies
-/node_modules
-/node_modules
+/node_modules/
 /.pnp
 .pnp.js
+
+#DB
+devices.db
 
 # testing
 /coverage

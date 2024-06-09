@@ -33,7 +33,8 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
    ```bash
    mosquitto_pub -h localhost -t test/smartPlug1 -m '{"deviceName":"smartPlug1","currentPower":"269W","totalPowerConsumption":"82.1kWh","state":"OFF"}'
    ```
-   Si le message `{deviceName:smartPlug1,currentPower:269W,totalPowerConsumption:82.1kWh,state:OFF}` s'affiche au niveau de la première console, cela signifie que tout se passe bien.
+   Si le message s'affiche au niveau de la première console, cela signifie que tout se passe bien:
+   `{deviceName:smartPlug1,currentPower:269W,totalPowerConsumption:82.1kWh,state:OFF}`
 
 ### Backend NODE JS
 
@@ -70,16 +71,22 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
 
 ### Frontend
 
-1. Se déplacer vers de dossier Frontend `mqtt-react-client`
+1. Se déplacer vers de dossier Frontend `FRONTEND`
 
    ```bash
-   cd mqtt-react-client
+   cd FRONTEND
    ```
 
 2. Installer les dépendances :
 
    ```bash
    npm i
+   ```
+
+   ou
+
+   ```bash
+   npm install
    ```
 
 3. Configurer les variables d'environnement :
