@@ -24,13 +24,16 @@ Pour tester le bon fonctionnement de `Mosquitto` suivez les étapes suivantes:
   ```
 
 4. Commande de publication
+   Ouvrez une ligne de commande et tapez :
    ```bash
-   mosquitto_pub -h localhost -t test/smartPlug1
+   mosquitto_sub -h localhost -t test/smartPlug1
    ```
 5. Commande de souscription
+   Ouvrez une nouvelle ligne de commande et tapez ensuite :
    ```bash
    mosquitto_pub -h localhost -t test/smartPlug1 -m '{"deviceName":"smartPlug1","currentPower":"269W","totalPowerConsumption":"82.1kWh","state":"OFF"}'
    ```
+   Si le message `{deviceName:smartPlug1,currentPower:269W,totalPowerConsumption:82.1kWh,state:OFF}` s'affiche au niveau de la première console, cela signifie que tout se passe bien.
 
 ### Backend NODE JS
 
