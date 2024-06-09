@@ -20,7 +20,7 @@ yarn-error.log*
 
 #DB
 devices.db
-
+/devices.db
 # testing
 /coverage
 /test
