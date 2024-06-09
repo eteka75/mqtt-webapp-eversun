@@ -1,0 +1,11 @@
+{
+  "mqtt": {
+    "host": "mqtt://localhost",
+    "brokerUrl": "mqtt://localhost:1883",
+    "port": 1883,
+    "topicPrefix": "test"
+  },
+  "database": {
+    "filename": "./devices.db"
+  }
+}
