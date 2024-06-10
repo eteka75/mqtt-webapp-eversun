@@ -14,9 +14,13 @@
 }
 .lhistory {
   font-size: 14px;
+  padding: 0 20px;
 }
 .lhistory > li {
   padding: 4px;
+}
+.mb-0 {
+  margin-bottom: 0;
 }
 .gris {
   opacity: 0.5;

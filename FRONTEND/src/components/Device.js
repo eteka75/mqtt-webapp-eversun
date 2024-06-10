@@ -6,7 +6,6 @@ const Device = () => {
   const [devices, setDevices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedDevice, setSelectedDevice] = useState(null);
-  const [selectedDevices, setSelectedDevices] = useState(null);
   const [deviceMessages, setDeviceMessages] = useState([]);
   const [simulDevice, setSimulDevice] = useState("");
 
@@ -187,7 +186,7 @@ const Device = () => {
                 Turn {deviceMessages[0]?.state === "ON" ? "OFF" : "ON"}
               </button>
             )}
-            <h4>Historique</h4>
+            <h4 className="mb-0">Historique</h4>
             <ul className="lhistory">
               {deviceMessages.map((device, index) => (
                 <li>
