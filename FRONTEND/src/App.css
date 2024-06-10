@@ -12,6 +12,15 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.lhistory {
+  font-size: 14px;
+}
+.lhistory > li {
+  padding: 4px;
+}
+.gris {
+  opacity: 0.5;
+}
 .tbold {
   font-weight: bold;
   color: cyan;
@@ -23,10 +32,15 @@
 .mt-large {
   margin-top: 3rem;
 }
+.noinfo {
+  padding: 20px 0 10px;
+  font-size: medium;
+}
 .border {
   border: 1px solid #fefefe;
   padding: 0px 20px 20px;
   border-radius: 10px;
+  margin-bottom: 50px;
 }
 .App-header {
   background-color: #282c34;

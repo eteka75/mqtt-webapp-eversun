@@ -30,7 +30,7 @@ router.get("/devices", (req, res) => {
 router.get("/device/:name", (req, res) => {
   const deviceName = req.params.name;
   db.all(
-    `SELECT * FROM device_data WHERE deviceName = ? ORDER BY timestamp DESC LIMIT 1`,
+    `SELECT * FROM device_data WHERE deviceName = ? ORDER BY timestamp DESC`,
     [deviceName],
     (err, mrows) => {
       if (err) {

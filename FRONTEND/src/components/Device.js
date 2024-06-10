@@ -6,6 +6,7 @@ const Device = () => {
   const [devices, setDevices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedDevice, setSelectedDevice] = useState(null);
+  const [selectedDevices, setSelectedDevices] = useState(null);
   const [deviceMessages, setDeviceMessages] = useState([]);
   const [simulDevice, setSimulDevice] = useState("");
 
@@ -32,6 +33,22 @@ const Device = () => {
     }
   }, [selectedDevice]);
 
+  const dateToFr = (dateString) => {
+    const date = new Date(dateString);
+    if (isNaN(date)) {
+      throw new Error("Date invalide");
+    }
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    };
+    return new Intl.DateTimeFormat("fr-FR", options).format(date);
+  };
+
   const fetchDevices = async () => {
     setLoading(true);
     try {
@@ -50,7 +67,7 @@ const Device = () => {
     setLoading(true);
     try {
       const response = await axios.get(`${apiUrl}/api/device/${deviceName}`);
-
+      console.log(response.data);
       setDeviceMessages(response.data?.data);
     } catch (error) {
       console.error("Error fetching device messages:", error);
@@ -154,7 +171,7 @@ const Device = () => {
                 <b>{deviceMessages[0]?.totalPowerConsumption}</b>
               </li>
               <li>
-                Timestamp: <b>{deviceMessages[0]?.timestamp}</b>
+                Timestamp: <b>{dateToFr(deviceMessages[0]?.timestamp)}</b>
               </li>
               <li>
                 State: <b>{deviceMessages[0]?.state}</b>
@@ -170,10 +187,28 @@ const Device = () => {
                 Turn {deviceMessages[0]?.state === "ON" ? "OFF" : "ON"}
               </button>
             )}
+            <h4>Historique</h4>
+            <ul className="lhistory">
+              {deviceMessages.map((device, index) => (
+                <li>
+                  {dateToFr(device?.timestamp)}
+                  <div className="gris">
+                    {" • "} State : {device?.state} {" • "} CP:
+                    {"    "}
+                    {deviceMessages[0]?.currentPower}
+                    {" • "} TPC: {deviceMessages[0]?.totalPowerConsumption}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
         {(!selectedDevice || !deviceMessages[0]) && (
-          <p>Sélectionnez un device</p>
+          <div className="noinfo ">
+            <b>Aucun device sélectionné</b>
+            <br></br>
+            <div className="gris"> Veuillez sélectionnez un device...</div>
+          </div>
         )}
       </div>
     </div>
